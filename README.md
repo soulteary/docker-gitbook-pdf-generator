@@ -2,7 +2,7 @@
 
 > 如果你想使用 GitBook 生成 PDF ，又不想折腾，使用这个项目就对啦！
 
-总所周知 GitBook 新版本调用 `calibre` 生成的 PDF 尺寸比较大，而且不支持 PDF 压缩，非常不利于传播。
+众所周知 GitBook 新版本调用 `calibre` 生成的 PDF 尺寸比较大，而且不支持 PDF 压缩，非常不利于传播。
 
 经过简单的寻找，我看到 **fuergaosi233** 同学用 Python 基于 `weastprint` 编写了一个简单的 GitBook PDF [生成工具](https://github.com/fuergaosi233/gitbook2pdf)，使用下来发觉还不错，于是就封装了这个镜像，希望能够帮助到有同样需求的你。
 
