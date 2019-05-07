@@ -1,0 +1,10 @@
+version: '2'
+
+services:
+
+  pdf-generator:
+    image: soulteary/docker-gitbook-pdf-generator:1.0.0
+    volumes:
+      - ./output:/app/output:rw
+      - ./fonts/:/usr/share/fonts:ro
+    command: "http://self-publishing.ebookchain.org"
