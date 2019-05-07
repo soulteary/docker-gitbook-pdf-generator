@@ -3,7 +3,7 @@ version: '2'
 services:
 
   pdf-generator:
-    image: soulteary/docker-gitbook-pdf-generator:1.0.0
+    image: soulteary/docker-gitbook-pdf-generator
     volumes:
       - ./output:/app/output:rw
       - ./fonts/:/usr/share/fonts:ro
