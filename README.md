@@ -36,6 +36,8 @@ Generated
 
 如果你对样式有更高的要求，可以使用文件挂载的方式修改 `/app/gitbook.css` 的样式。
 
+如果你想了解更多细节，可以阅读 [这篇博客](https://soulteary.com/2019/05/07/generate-small-gitbook-pdf-using-the-docker-with-python.html)。
+
 ## 协议
 
 MIT, For Everyone.
