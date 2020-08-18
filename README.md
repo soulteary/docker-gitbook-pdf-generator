@@ -15,9 +15,17 @@
 比如我们要将 `http://self-publishing.ebookchain.org` 的内容生成为电子书，只需要执行下面的命令：
 
 ```bash
-docker run --rm -v `pwd`/fonts:/app/fonts \
+docker run --rm -v `pwd`/fonts:/usr/share/fonts \
                 -v `pwd`/output:/app/output \
-                soulteary/docker-gitbook-pdf-generator "http://self-publishing.ebookchain.org"
+                soulteary/docker-gitbook-pdf-generator:1.0.0 "http://self-publishing.ebookchain.org"
+```
+
+如果你是 Windows 用户，使用 Powershell，可以使用下面的命令：
+
+```powershell
+docker run --rm -v $PWD/fonts:/usr/share/fonts \
+                -v $PWD/output:/app/output \
+                soulteary/docker-gitbook-pdf-generator:1.0.0 "http://self-publishing.ebookchain.org"
 ```
 
 稍等片刻，你将会看到下面的内容：
@@ -37,6 +45,17 @@ Generated
 如果你对样式有更高的要求，可以使用文件挂载的方式修改 `/app/gitbook.css` 的样式。
 
 如果你想了解更多细节，可以阅读 [这篇博客](https://soulteary.com/2019/05/07/generate-small-gitbook-pdf-using-the-docker-with-python.html)。
+
+## 常见问题
+
+- 运行报错
+    - 报错提示 “/usr/local/lib/python3.7/site-packages/weasyprint/fonts.py:230: UserWarning: FontConfig: No fonts configured. Expect ugly output. 'FontConfig: No fonts configured. ”
+    - 报错原因 字体挂载位置不正确，请参考最新文档中的命令。感谢 ISSUE 里诸位网友反馈。
+- Windows 环境命令报错
+    - 报错提示 “Error response from daemon: create pwd/fonts: "pwd/fonts" includes invalid characters for a local volume name, only "[a-zA-Z0-9][a-zA-Z0-9_.-]" are allowed. If you intended to pass a host directory, use absolute path.”
+    - 报错原因 windows 不支持 bash 标准语法，使用
+- 生成 PDF 中文显示不正确，显示为“口口”
+    - 解决方法：下载或者拷贝系统字体到你要挂载的目录，再次执行程序
 
 ## 协议
 
